@@ -3,24 +3,6 @@ import numpy as np
 import cvxpy as cp
 import matplotlib.pyplot as plt
 
-# ============================================================
-# Figure 5 reproduction -- revised
-#
-# Main fixes compared with the previous wrong version:
-# 1) PSLR is computed using FIRST-NULL sidelobe exclusion,
-#    not by excluding only the 3 dB width region.
-#    That was the main reason the earlier PSLR values were far too low.
-# 2) The script searches for a feasible channel seed whose Gamma=10 dB
-#    point matches the paper's Figure-4 statement:
-#       separated RadCom PSLR ≈ 7 dB
-#       shared    RadCom PSLR ≈ 15 dB
-# 3) It keeps the constrained-SDR methodology of the paper:
-#       separated: (13) -> (19)
-#       shared:    (10) -> (20)
-#
-# This is still a reproduction, not a guaranteed pixel-identical copy,
-# because the paper does not publish the exact channel realization/seed.
-# ============================================================
 
 
 def db2lin(x_db):
